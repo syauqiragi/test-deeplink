@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deeplink Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .button:hover {
+            background-color: #0056b3;
+        }
+        
+        .button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        .waiting {
+            display: inline-block;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <button id="deeplinkBtn" class="button" onclick="handleClick()">
+        Open App
+    </button>
+
+    <script>
+        function handleClick() {
+            const button = document.getElementById('deeplinkBtn');
+            
+            // Disable button and show waiting state
+            button.disabled = true;
+            button.innerHTML = '<span class="waiting">⏳</span> Waiting...';
+            
+            // After 3 seconds, open deeplink
+            setTimeout(() => {
+                // Replace with your actual deeplink
+                const deeplink = 'https://privy.test-app.link/Fhwtw1VTjUb';
+                
+                // Try to open the deeplink
+                window.location.href = deeplink;
+                
+                // Reset button after attempting to open deeplink
+                setTimeout(() => {
+                    button.disabled = false;
+                    button.innerHTML = 'Open App';
+                }, 1000);
+                
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
