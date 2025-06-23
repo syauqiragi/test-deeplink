@@ -47,52 +47,11 @@
     </style>
 </head>
 <body>
-    
-    <button id="deeplinkBtn" class="button" onclick="handleClick()">
-        Open App Prod
-    </button> 
-    
-    <button id="deeplinkBtnStg" class="button" onclick="handleClickStg()">
-        Open App STG
-    </button>
-
-    <a href="https://test-deeplink-psi.vercel.app/digitalid/123">Open App With AASA</a>
-    
     <button id="deeplinkBtnScheme" class="button" onclick="handleClickScheme()">
         Open App with scheme
     </button>
 
     <script>
-        // handleClickSchemeRedirect();
-        
-        function handleClick() {
-            const button = document.getElementById('deeplinkBtn');
-            
-            // Disable button and show waiting state
-            button.disabled = true;
-            button.innerHTML = '<span class="waiting">⏳</span> Waiting...';
-            
-            // After 3 seconds, open deeplink
-            setTimeout(() => {
-                // Replace with your actual deeplink
-                const deeplink = 'https://privy.app.link/Fhwtw1VTjUb';
-                
-                // Try to open the deeplink
-                window.location.href = deeplink;
-                
-                // Reset button after attempting to open deeplink
-                setTimeout(() => {
-                    button.disabled = false;
-                    button.innerHTML = 'Open App Prod';
-                }, 1000);
-                
-            }, 3000);
-        }
-        
-        function handleClickStg() {
-            window.location.replace('https://test-deeplink-psi.vercel.app/login');
-        }
-        
         function handleClickScheme() {
             const button = document.getElementById('deeplinkBtnScheme');
             
@@ -100,26 +59,16 @@
             button.disabled = true;
             button.innerHTML = '<span class="waiting">⏳</span> Waiting...';
             
-            // After 3 seconds, open deeplink
-            setTimeout(() => {
-                // Replace with your actual deeplink
-                const deeplink = 'privyid://digitalid?token=xxxxxx';
-                
-                // Try to open the deeplink
-                window.location.href = deeplink;
-                
-                // Reset button after attempting to open deeplink
-                setTimeout(() => {
-                    button.disabled = false;
-                    button.innerHTML = 'Open App Scheme';
-                }, 1000);
-                
-            }, 3000);
-        }
-        
-        function handleClickSchemeRedirect() {
+            // Replace with your actual deeplink
             const deeplink = 'privyid://digitalid?token=xxxxxx';
+            
+            // Try to open the deeplink
             window.location.href = deeplink;
+            
+            setTimeout(() => {
+                button.disabled = false;
+                button.innerHTML = 'Open App Scheme';
+            }, 1000);
         }
     </script>
 </body>
