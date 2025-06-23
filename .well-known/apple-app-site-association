@@ -3,21 +3,9 @@
     "apps": [],
     "details": [
       {
-        "appID": "4H428LM6GE.com.privy.PrivyID",
-        "paths": [
-          "/password/edit"
-        ]
-      },
-      {
         "appID": "4H428LM6GE.com.privy.PrivyID.stg",
         "paths": [
-          "/digitalid/*"
-        ]
-      },
-      {
-        "appID": "4H428LM6GE.com.privy.PrivyID.dev",
-        "paths": [
-          "/password/edit"
+          "/login"
         ]
       }
     ]
