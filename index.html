@@ -89,30 +89,7 @@
         }
         
         function handleClickStg() {
-            const button = document.getElementById('deeplinkBtnStg');
-            
-            // Disable button and show waiting state
-            // button.disabled = true;
-            // button.innerHTML = '<span class="waiting">⏳</span> Waiting...';
-
-            const deeplink = 'https://test-deeplink-psi.vercel.app/login';
-            window.location.href = deeplink;
-            
-            // // After 3 seconds, open deeplink
-            // setTimeout(() => {
-            //     // Replace with your actual deeplink
-            //     const deeplink = 'https://test-deeplink-psi.vercel.app/digitalid/123';
-                
-            //     // Try to open the deeplink
-            //     window.location.href = deeplink;
-                
-            //     // Reset button after attempting to open deeplink
-            //     setTimeout(() => {
-            //         button.disabled = false;
-            //         button.innerHTML = 'Open App Stg';
-            //     }, 1000);
-                
-            // }, 0);
+            window.location.replace('https://test-deeplink-psi.vercel.app/login');
         }
         
         function handleClickScheme() {
