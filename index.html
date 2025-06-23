@@ -53,7 +53,7 @@
 
     
     <button id="deeplinkBtnScheme" class="button" onclick="handleClickScheme()">
-        Open App scheme
+        Open App with scheme
     </button>
 
     <script>
@@ -91,7 +91,7 @@
             // After 3 seconds, open deeplink
             setTimeout(() => {
                 // Replace with your actual deeplink
-                const deeplink = 'privyid:Vacation?index=1';
+                const deeplink = 'privyid://Vacation?index=1';
                 
                 // Try to open the deeplink
                 window.location.href = deeplink;
