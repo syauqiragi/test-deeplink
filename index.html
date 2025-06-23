@@ -48,14 +48,19 @@
 </head>
 <body>
     <h1> Landing QR </h1>
-    <button id="deeplinkBtnScheme" class="button" onclick="handleClickScheme()">
-        Open App with scheme
+    <br>
+    <button id="deeplinkBtnScheme" class="button" onclick="handleClickDeeplink()">
+        Open App with Deeplink
     </button>
 
     <script>
         handleClickScheme();
 
         function handleClickScheme() {
+            const deeplink = 'privyid://digitalid?token=xxxxxx';
+            window.location.href = deeplink;
+        }
+        function handleClickDeeplink() {
             const button = document.getElementById('deeplinkBtnScheme');
             
             // Disable button and show waiting state
@@ -63,15 +68,10 @@
             button.innerHTML = '<span class="waiting">⏳</span> Waiting...';
             
             // Replace with your actual deeplink
-            const deeplink = 'privyid://digitalid?token=xxxxxx';
+            const deeplink = 'https://privy.test-app.link/4i2aIEnekUb';
             
             // Try to open the deeplink
             window.location.href = deeplink;
-            
-            setTimeout(() => {
-                button.disabled = false;
-                button.innerHTML = 'Open App Scheme';
-            }, 1000);
         }
     </script>
 </body>
