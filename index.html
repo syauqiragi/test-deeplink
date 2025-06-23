@@ -51,6 +51,11 @@
         Open App
     </button>
 
+    
+    <button id="deeplinkBtnScheme" class="button" onclick="handleClickScheme()">
+        Open App scheme
+    </button>
+
     <script>
         function handleClick() {
             const button = document.getElementById('deeplinkBtn');
@@ -63,6 +68,30 @@
             setTimeout(() => {
                 // Replace with your actual deeplink
                 const deeplink = 'https://privy.test-app.link/Fhwtw1VTjUb';
+                
+                // Try to open the deeplink
+                window.location.href = deeplink;
+                
+                // Reset button after attempting to open deeplink
+                setTimeout(() => {
+                    button.disabled = false;
+                    button.innerHTML = 'Open App';
+                }, 1000);
+                
+            }, 3000);
+        }
+        
+        function handleClickScheme() {
+            const button = document.getElementById('deeplinkBtnScheme');
+            
+            // Disable button and show waiting state
+            button.disabled = true;
+            button.innerHTML = '<span class="waiting">⏳</span> Waiting...';
+            
+            // After 3 seconds, open deeplink
+            setTimeout(() => {
+                // Replace with your actual deeplink
+                const deeplink = 'privyid:Vacation?index=1';
                 
                 // Try to open the deeplink
                 window.location.href = deeplink;
